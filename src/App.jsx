@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import About from "./pages/About";
 import FindUs from "./pages/FindUs";
+import ProductDetail from "./pages/ProductDetail";
 
 export default function App() {
   return (
@@ -18,6 +19,10 @@ export default function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/about" element={<About />} />
           <Route path="/find-us" element={<FindUs />} />
+          {/* <Route path="/haldi-powder" element={<ProductDetail />} />
+          <Route path="/mirchi-powder" element={<ProductDetail />} />
+          <Route path="/dhaniya-powder" element={<ProductDetail />} /> */}
+          <Route path="/:slug" element={<ProductDetail />} />
         </Routes>
 
         <Footer />
