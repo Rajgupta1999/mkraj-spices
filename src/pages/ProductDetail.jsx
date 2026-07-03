@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { FSSAI_NO } from "../data";
+import OrderLink from "../components/OrderLink";
 
 const productData = {
   "haldi-powder": {
@@ -192,10 +193,8 @@ export default function ProductDetail() {
                 <b>FSSAI License No:</b> {FSSAI_NO}
               </p>
 
-              <a
-                href={`https://wa.me/919794022167?text=Namaste%2C%20I%20want%20to%20order%20MK%20Raj%20${encodeURIComponent(product.name)}`}
-                target="_blank"
-                rel="noreferrer"
+              <OrderLink
+                message={`Namaste! Mujhe MK Raj ${product.name} ka order karna hai.\nPlease confirm karein.`}
                 style={{
                   display: "inline-block",
                   marginTop: 16,
@@ -208,7 +207,7 @@ export default function ProductDetail() {
                 }}
               >
                 💬 Order on WhatsApp
-              </a>
+              </OrderLink>
             </div>
           </div>
         </div>

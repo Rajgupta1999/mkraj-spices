@@ -139,6 +139,7 @@ export default function Home() {
 
 
 <section
+  className="home-hero"
   style={{
     backgroundImage: `url(${BACKGROUND_IMAGE_SRC})`,
     backgroundSize: "cover",

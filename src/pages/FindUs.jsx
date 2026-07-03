@@ -1,12 +1,10 @@
 import { GOOGLE_REVIEW_URL } from "../data";
 import { Helmet } from "react-helmet-async";
+import OrderLink from "../components/OrderLink";
 
 export default function FindUs() {
   const address =
     "153/3, Pathanpura, Rath, Hamirpur, Uttar Pradesh 210431";
-
-  const whatsappUrl =
-    "https://wa.me/919794022167?text=Namaste%2C%20I%20want%20to%20place%20an%20order";
 
   return (
     <>
@@ -152,6 +150,7 @@ export default function FindUs() {
             />
           </div>
 
+
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <a
               href={GOOGLE_REVIEW_URL}
@@ -191,10 +190,8 @@ export default function FindUs() {
               📍 Get Directions
             </a>
 
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
+            <OrderLink
+              message={"Namaste! Mujhe MK Raj Spices ka order place karna hai.\nPlease confirm karein."}
               style={{
                 flex: "1 1 180px",
                 background: "#25D366",
@@ -208,7 +205,7 @@ export default function FindUs() {
               }}
             >
               💬 WhatsApp Order
-            </a>
+            </OrderLink>
           </div>
         </div>
       </section>

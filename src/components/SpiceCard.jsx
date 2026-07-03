@@ -1,16 +1,13 @@
 import { useState } from "react";
 import { FSSAI_NO } from "../data";
 import { Link } from "react-router-dom";
+import OrderLink from "./OrderLink";
 
 export default function SpiceCard({ spice }) {
   const [sel, setSel] = useState(0);
   const pack = spice.packs[sel];
 
-  const whatsappMsg = encodeURIComponent(
-    `Namaste! Mujhe MK Raj ${spice.name} (${pack.weight}) - ₹${pack.price} ka order karna hai.\nPlease confirm karein.`
-  );
-
-  const whatsappLink = `https://wa.me/919794022167?text=${whatsappMsg}`;
+  const orderMessage = `Namaste! Mujhe MK Raj ${spice.name} (${pack.weight}) - ₹${pack.price} ka order karna hai.\nPlease confirm karein.`;
 
   return (
     <article
@@ -149,11 +146,9 @@ export default function SpiceCard({ spice }) {
               Order via
             </div>
 
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Order MK Raj ${spice.name} ${pack.weight} on WhatsApp`}
+            <OrderLink
+              message={orderMessage}
+              ariaLabel={`Order MK Raj ${spice.name} ${pack.weight} on WhatsApp`}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -169,7 +164,7 @@ export default function SpiceCard({ spice }) {
               }}
             >
               💬 WhatsApp Order
-            </a>
+            </OrderLink>
           </div>
         </div>
         
