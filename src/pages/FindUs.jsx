@@ -55,7 +55,11 @@ export default function FindUs() {
               postalCode: "210431",
               addressCountry: "IN",
             },
+<<<<<<< HEAD
             telephone: "+91 6398033582",
+=======
+            telephone: "+91 9794022167",
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
             areaServed: "India",
             priceRange: "₹₹",
             openingHoursSpecification: [
@@ -122,9 +126,15 @@ export default function FindUs() {
               <br />
               <b>Address:</b> {address}
               <br />
+<<<<<<< HEAD
               <b>Phone:</b> +91 6398033582, +91 6392836517
               <br />
               <b>WhatsApp:</b> +91 6398033582
+=======
+              <b>Phone:</b> +91 9794022167, +91 6392836517
+              <br />
+              <b>WhatsApp:</b> +91 9794022167
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
               <br />
               <b>Opening Hours:</b> Monday to Sunday, 9:00 AM to 8:00 PM
             </p>
@@ -140,7 +150,11 @@ export default function FindUs() {
           >
             <iframe
               title="MK Raj Spices Google Map"
+<<<<<<< HEAD
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.785638229534!2d79.5816269!3d25.601936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399d43444f0c3c91%3A0xac10203f8dfdcfe2!2sMK%20Raj!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin"
+=======
+              src="https://www.google.com/maps?q=MK%20Raj%20Company%20153%2F3%20Pathanpura%20Rath%20Hamirpur%20Uttar%20Pradesh%20210431&output=embed"
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
               width="100%"
               height="360"
               style={{ border: 0, display: "block" }}
@@ -172,7 +186,11 @@ export default function FindUs() {
             </a>
 
             <a
+<<<<<<< HEAD
               href="https://maps.app.goo.gl/Zr3iDL1qFbUYMSxB9"
+=======
+              href="https://www.google.com/maps/search/MK+Raj+Company+153%2F3+Pathanpura+Rath+Hamirpur+Uttar+Pradesh+210431"
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
               target="_blank"
               rel="noreferrer"
               style={{
@@ -234,7 +252,11 @@ export default function FindUs() {
             flexWrap: "wrap",
           }}
         >
+<<<<<<< HEAD
           {["+91 6398033582", "+91 6392836517"].map((n) => (
+=======
+          {["+91 9794022167", "+91 6392836517"].map((n) => (
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
             <a
               key={n}
               href={`tel:${n.replace(/\s/g, "")}`}

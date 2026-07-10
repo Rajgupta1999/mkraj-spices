@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FSSAI_NO } from "../data";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { useOrder } from "../context/OrderContext";
 
 export default function SpiceCard({ spice }) {
@@ -16,6 +17,15 @@ export default function SpiceCard({ spice }) {
     setAdded(true);
     setTimeout(() => setAdded(false), 1400);
   };
+=======
+import OrderLink from "./OrderLink";
+
+export default function SpiceCard({ spice }) {
+  const [sel, setSel] = useState(0);
+  const pack = spice.packs[sel];
+
+  const orderMessage = `Namaste! Mujhe MK Raj ${spice.name} (${pack.weight}) - ₹${pack.price} ka order karna hai.\nPlease confirm karein.`;
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
 
   return (
     <article
@@ -57,7 +67,11 @@ export default function SpiceCard({ spice }) {
             width: 100,
             height: 100,
             borderRadius: "50%",
+<<<<<<< HEAD
             background: "rgba(255,255,255,0.14)",
+=======
+            background: "rgba(230, 30, 30, 0.08)",
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
           }}
         />
       </div>
@@ -97,9 +111,15 @@ export default function SpiceCard({ spice }) {
           </div>
 
           <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+<<<<<<< HEAD
             {spice.packs.map((p, i) => (
               <button
                 key={p.weight}
+=======
+            {spice  .packs.map((p, i) => (
+              <button
+                key={i}
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
                 type="button"
                 aria-label={`Select ${p.weight} pack of MK Raj ${spice.name}`}
                 onClick={() => setSel(i)}
@@ -126,6 +146,7 @@ export default function SpiceCard({ spice }) {
             background: `${spice.accent}12`,
             borderRadius: 14,
             padding: "14px 16px",
+<<<<<<< HEAD
             display: "grid",
             gridTemplateColumns: "1fr",
             gap: 12,
@@ -159,10 +180,44 @@ export default function SpiceCard({ spice }) {
             <button
               type="button"
               onClick={handleAdd}
+=======
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 12,
+          }}
+        >
+          <div>
+            <div style={{ fontSize: 11, color: "#888", fontWeight: 600 }}>
+              MRP Price
+            </div>
+            <div style={{ fontSize: 28, fontWeight: 900, color: spice.color }}>
+              ₹{pack.price}
+            </div>
+            <div style={{ fontSize: 12, color: "#888" }}>{pack.weight} pack</div>
+          </div>
+
+          <div style={{ textAlign: "right" }}>
+            <div
+              style={{
+                fontSize: 11,
+                color: "#312f2f",
+                fontWeight: 600,
+                marginBottom: 4,
+              }}
+            >
+              Order via
+            </div>
+
+            <OrderLink
+              message={orderMessage}
+              ariaLabel={`Order MK Raj ${spice.name} ${pack.weight} on WhatsApp`}
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 6,
+<<<<<<< HEAD
                 background: added ? "#168f3a" : "#8B0000",
                 color: "#fff",
                 padding: "9px 16px",
@@ -201,11 +256,51 @@ export default function SpiceCard({ spice }) {
             style={{ color: "#888", fontWeight: 600 }}
           >
             +91 6398033582
+=======
+                background: "#25D366",
+                color: "#fff",
+                padding: "8px 16px",
+                borderRadius: 10,
+                fontWeight: 700,
+                fontSize: 13,
+                textDecoration: "none",
+                boxShadow: "0 3px 10px #25D36655",
+              }}
+            >
+              💬 WhatsApp Order
+            </OrderLink>
+          </div>
+        </div>
+        
+        <Link
+  to={`/${spice.slug}`}
+  style={{
+    display: "inline-block",
+    marginTop: 10,
+    color: spice.color,
+    fontWeight: 800,
+    textDecoration: "none",
+    fontSize: 13,
+  }}
+>
+  View Details →
+</Link>
+
+        <div style={{ fontSize: 12, color: "#aaa", textAlign: "center" }}>
+          📞 Call:{" "}
+          <a
+            href="tel:+919794022167"
+            aria-label="Call MK Raj Spices on 9794022167"
+            style={{ color: "#888", fontWeight: 600 }}
+          >
+            +91 9794022167
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
           </a>
         </div>
       </div>
     </article>
   );
+<<<<<<< HEAD
 }
 
 const qtyButtonStyle = {
@@ -218,3 +313,6 @@ const qtyButtonStyle = {
   fontWeight: 900,
   cursor: "pointer",
 };
+=======
+}
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1

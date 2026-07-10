@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
+=======
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
 import { GOOGLE_REVIEW_URL, FSSAI_NO,BACKGROUND_IMAGE_SRC } from "../data";
 import { Helmet } from "react-helmet-async";
 
 export default function Home() {
+<<<<<<< HEAD
    const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -19,6 +23,10 @@ export default function Home() {
     
     <>
     
+=======
+  return (
+    <>
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
      <Helmet>
   <title>MK Raj Spices | Pure Haldi, Mirchi & Dhaniya Powder</title>
     
@@ -129,7 +137,10 @@ export default function Home() {
 </Helmet>
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
       {/* <section style={{
         // background: "linear-gradient(135deg, #22ca8c 0%, #5C1A00 45%, #2D1B00 100%)",
         color: "#fff", padding: "80px 24px 100px", textAlign: "center", position: "relative", overflow: "hidden"
@@ -152,6 +163,10 @@ export default function Home() {
         </div>
       </section> */}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
 <section
   className="home-hero"
   style={{
@@ -207,6 +222,10 @@ export default function Home() {
       <span style={{ color: "#D4A017" }}>Spices</span>
     </h1>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
     <p
       style={{
         fontSize: 18,
@@ -259,6 +278,7 @@ export default function Home() {
 </section>
 
 
+<<<<<<< HEAD
 
 <section
   style={{
@@ -388,6 +408,8 @@ export default function Home() {
 
 
 
+=======
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
       <section style={{ background: "#fff", padding: "18px 24px", borderBottom: "1px solid #f0f0f0" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 24 }}>
           {[["✅","FSSAI Certified"],["🌿","100% Natural"],["🚫","No Preservatives"],["🧼","Hygienically Packed"],["🇮🇳","Pure Taste of India"]].map(([icon,label]) => (

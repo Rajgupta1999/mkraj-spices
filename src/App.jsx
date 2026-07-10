@@ -23,6 +23,12 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/find-us" element={<FindUs />} />
           <Route path="/address" element={<Address />} />
+<<<<<<< HEAD
+=======
+          {/* <Route path="/haldi-powder" element={<ProductDetail />} />
+          <Route path="/mirchi-powder" element={<ProductDetail />} />
+          <Route path="/dhaniya-powder" element={<ProductDetail />} /> */}
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
           <Route path="/:slug" element={<ProductDetail />} />
         </Routes>
 

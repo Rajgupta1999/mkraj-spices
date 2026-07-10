@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -8,15 +9,78 @@ const benefitsBySlug = {
   "haldi-powder": ["Natural colour and aroma", "Useful for daily cooking", "No added preservatives", "FSSAI certified"],
   "mirchi-powder": ["Spicy flavour", "Rich colour", "Hygienically packed", "No added preservatives"],
   "dhaniya-powder": ["Natural aroma", "Fresh taste", "Hygienically packed", "FSSAI certified"],
+=======
+import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { FSSAI_NO } from "../data";
+import OrderLink from "../components/OrderLink";
+
+const productData = {
+  "haldi-powder": {
+    name: "Haldi Powder",
+    hindi: "हल्दी पाउडर",
+    ingredient: "Turmeric",
+    image: "/haldi.jpg",
+    description:
+      "MK Raj Haldi Powder is hygienically packed turmeric powder for daily Indian cooking.",
+    uses: "Dal, sabzi, curry, pickle, traditional recipes and daily cooking.",
+    benefits: [
+      "Natural colour and aroma",
+      "Useful for daily cooking",
+      "No added preservatives",
+      "FSSAI certified",
+    ],
+    keywords:
+      "MK Raj Haldi Powder, pure haldi powder, turmeric powder, haldi powder in India",
+  },
+  "mirchi-powder": {
+    name: "Mirchi Powder",
+    hindi: "मिर्च पाउडर",
+    ingredient: "Red Chilli",
+    image: "/mirchi.jpg",
+    description:
+      "MK Raj Mirchi Powder gives spicy taste and rich colour to Indian dishes.",
+    uses: "Sabzi, curry, chutney, namkeen, snacks and masala recipes.",
+    benefits: [
+      "Spicy flavour",
+      "Rich colour",
+      "Hygienically packed",
+      "No added preservatives",
+    ],
+    keywords:
+      "MK Raj Mirchi Powder, red chilli powder, lal mirch powder, mirchi powder in India",
+  },
+  "dhaniya-powder": {
+    name: "Dhaniya Powder",
+    hindi: "धनिया पाउडर",
+    ingredient: "Coriander Seeds",
+    image: "/dhaniya.jpg",
+    description:
+      "MK Raj Dhaniya Powder adds natural aroma and flavour to Indian food.",
+    uses: "Vegetables, curries, dal, gravy, masala mix and traditional recipes.",
+    benefits: [
+      "Natural aroma",
+      "Fresh taste",
+      "Hygienically packed",
+      "FSSAI certified",
+    ],
+    keywords:
+      "MK Raj Dhaniya Powder, coriander powder, dhaniya powder in India, pure dhaniya powder",
+  },
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
 };
 
 export default function ProductDetail() {
   const { slug } = useParams();
+<<<<<<< HEAD
   const product = SPICES.find((item) => item.slug === slug);
   const [sel, setSel] = useState(0);
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
   const { addToBasket } = useOrder();
+=======
+  const product = productData[slug];
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
 
   if (!product) {
     return (
@@ -27,6 +91,7 @@ export default function ProductDetail() {
     );
   }
 
+<<<<<<< HEAD
   const pack = product.packs[sel];
   const lineTotal = pack.price * qty;
   const pageUrl = `https://mkrajspices.netlify.app/${slug}`;
@@ -37,11 +102,15 @@ export default function ProductDetail() {
     setAdded(true);
     setTimeout(() => setAdded(false), 1400);
   };
+=======
+  const pageUrl = `https://mkrajspices.netlify.app/${slug}`;
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
 
   return (
     <>
       <Helmet>
         <title>MK Raj {product.name} | Pure {product.name}</title>
+<<<<<<< HEAD
         <meta name="description" content={product.desc} />
         <meta name="keywords" content={`MK Raj ${product.name}, ${product.ingredient}, Indian spices, buy spice online`} />
         <link rel="canonical" href={pageUrl} />
@@ -50,12 +119,26 @@ export default function ProductDetail() {
         <meta property="og:image" content={`https://mkrajspices.netlify.app${product.image}`} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="product" />
+=======
+
+        <meta name="description" content={product.description} />
+        <meta name="keywords" content={product.keywords} />
+        <link rel="canonical" href={pageUrl} />
+
+        <meta property="og:title" content={`MK Raj ${product.name}`} />
+        <meta property="og:description" content={product.description} />
+        <meta property="og:image" content={`https://mkrajspices.netlify.app${product.image}`} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="product" />
+
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
             name: `MK Raj ${product.name}`,
             image: `https://mkrajspices.netlify.app${product.image}`,
+<<<<<<< HEAD
             description: product.desc,
             brand: { "@type": "Brand", name: "MK Raj Spices" },
             category: "Spices",
@@ -69,6 +152,24 @@ export default function ProductDetail() {
             })),
           })}
         </script>
+=======
+            description: product.description,
+            brand: {
+              "@type": "Brand",
+              name: "MK Raj Spices",
+            },
+            category: "Spices",
+            url: pageUrl,
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "INR",
+              availability: "https://schema.org/InStock",
+              url: pageUrl,
+            },
+          })}
+        </script>
+
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -77,11 +178,19 @@ export default function ProductDetail() {
               {
                 "@type": "Question",
                 name: `What is MK Raj ${product.name}?`,
+<<<<<<< HEAD
                 acceptedAnswer: { "@type": "Answer", text: product.desc },
+=======
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: product.description,
+                },
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
               },
               {
                 "@type": "Question",
                 name: `How to use ${product.name}?`,
+<<<<<<< HEAD
                 acceptedAnswer: { "@type": "Answer", text: product.uses },
               },
               {
@@ -90,6 +199,19 @@ export default function ProductDetail() {
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "Select pack size and quantity, add to basket, fill address and send order on WhatsApp.",
+=======
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: product.uses,
+                },
+              },
+              {
+                "@type": "Question",
+                name: `How to store ${product.name}?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Store in a cool and dry place. Keep the pack tightly closed after opening.",
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
                 },
               },
             ],
@@ -119,6 +241,7 @@ export default function ProductDetail() {
             </div>
 
             <div style={{ flex: "1 1 360px" }}>
+<<<<<<< HEAD
               <h1 style={{ fontSize: 38, fontWeight: 900, color: "#5C1A00", marginBottom: 8 }}>
                 MK Raj {product.name}
               </h1>
@@ -201,6 +324,51 @@ export default function ProductDetail() {
                   </Link>
                 </div>
               </div>
+=======
+              <h1 style={{ fontSize: 38, fontWeight: 900, color: "#5C1A00" }}>
+                MK Raj {product.name}
+              </h1>
+
+              <h2 style={{ color: "#8B0000", fontSize: 22 }}>
+                {product.hindi}
+              </h2>
+
+              <p style={{ color: "#666", lineHeight: 1.8, fontSize: 16 }}>
+                {product.description}
+              </p>
+
+              <p>
+                <b>Ingredients:</b> {product.ingredient}
+              </p>
+
+              <p>
+                <b>Uses:</b> {product.uses}
+              </p>
+
+              <p>
+                <b>Pack Sizes:</b> 20g, 40g, 100g, 200g
+              </p>
+
+              <p>
+                <b>FSSAI License No:</b> {FSSAI_NO}
+              </p>
+
+              <OrderLink
+                message={`Namaste! Mujhe MK Raj ${product.name} ka order karna hai.\nPlease confirm karein.`}
+                style={{
+                  display: "inline-block",
+                  marginTop: 16,
+                  background: "#25D366",
+                  color: "#fff",
+                  padding: "14px 28px",
+                  borderRadius: 14,
+                  fontWeight: 800,
+                  textDecoration: "none",
+                }}
+              >
+                💬 Order on WhatsApp
+              </OrderLink>
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
             </div>
           </div>
         </div>
@@ -208,10 +376,29 @@ export default function ProductDetail() {
 
       <section style={{ padding: "50px 24px", background: "#fff" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
+<<<<<<< HEAD
           <h2 style={{ fontSize: 28, fontWeight: 900 }}>Benefits of MK Raj {product.name}</h2>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginTop: 20 }}>
             {benefits.map((b) => (
               <div key={b} style={{ background: "#FFF8F0", padding: "14px 20px", borderRadius: 14, fontWeight: 700, color: "#5C1A00" }}>
+=======
+          <h2 style={{ fontSize: 28, fontWeight: 900 }}>
+            Benefits of MK Raj {product.name}
+          </h2>
+
+          <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginTop: 20 }}>
+            {product.benefits.map((b) => (
+              <div
+                key={b}
+                style={{
+                  background: "#FFF8F0",
+                  padding: "14px 20px",
+                  borderRadius: 14,
+                  fontWeight: 700,
+                  color: "#5C1A00",
+                }}
+              >
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
                 ✅ {b}
               </div>
             ))}
@@ -222,12 +409,34 @@ export default function ProductDetail() {
       <section style={{ padding: "50px 24px", background: "#f9f9f9" }}>
         <div style={{ maxWidth: 850, margin: "0 auto" }}>
           <h2 style={{ fontSize: 28, fontWeight: 900 }}>FAQs</h2>
+<<<<<<< HEAD
           {[
             [`What is MK Raj ${product.name}?`, product.desc],
             [`How to use ${product.name}?`, product.uses],
             [`How to order ${product.name}?`, "Select pack size and quantity, add to basket, fill address and submit order on WhatsApp."],
           ].map(([q, a]) => (
             <div key={q} style={{ background: "#fff", padding: 20, borderRadius: 16, marginTop: 14, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
+=======
+
+          {[
+            [`What is MK Raj ${product.name}?`, product.description],
+            [`How to use ${product.name}?`, product.uses],
+            [
+              `How to store ${product.name}?`,
+              "Store in a cool and dry place. Keep the pack tightly closed after opening.",
+            ],
+          ].map(([q, a]) => (
+            <div
+              key={q}
+              style={{
+                background: "#fff",
+                padding: 20,
+                borderRadius: 16,
+                marginTop: 14,
+                boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
+              }}
+            >
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
               <h3 style={{ margin: "0 0 8px", color: "#5C1A00" }}>{q}</h3>
               <p style={{ margin: 0, color: "#666", lineHeight: 1.7 }}>{a}</p>
             </div>
@@ -236,6 +445,7 @@ export default function ProductDetail() {
       </section>
     </>
   );
+<<<<<<< HEAD
 }
 
 const qtyButtonStyle = {
@@ -248,3 +458,6 @@ const qtyButtonStyle = {
   fontWeight: 950,
   cursor: "pointer",
 };
+=======
+}
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1

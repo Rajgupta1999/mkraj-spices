@@ -2,8 +2,12 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const STORAGE_KEY = "mkraj_customer_address";
 const ORDER_KEY = "mkraj_pending_order_message";
+<<<<<<< HEAD
 const BASKET_KEY = "mkraj_basket_items";
 const WHATSAPP_NUMBER = "916398033582"; // WhatsApp number without '+' or leading zeros
+=======
+const WHATSAPP_NUMBER = "919794022167";
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
 
 const defaultAddress = {
   name: "",
@@ -15,8 +19,11 @@ const defaultAddress = {
 
 const OrderContext = createContext(null);
 
+<<<<<<< HEAD
 const buildItemKey = (spiceId, weight) => `${spiceId}-${weight}`;
 
+=======
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
 export function OrderProvider({ children }) {
   const [customer, setCustomer] = useState(() => {
     try {
@@ -27,6 +34,7 @@ export function OrderProvider({ children }) {
     }
   });
 
+<<<<<<< HEAD
   const [basketItems, setBasketItems] = useState(() => {
     try {
       const saved = localStorage.getItem(BASKET_KEY);
@@ -36,6 +44,8 @@ export function OrderProvider({ children }) {
     }
   });
 
+=======
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
   const [pendingOrderMessage, setPendingOrderMessage] = useState(() => {
     try {
       return localStorage.getItem(ORDER_KEY) || "Namaste! Mujhe MK Raj Spices ka order karna hai.\nPlease confirm karein.";
@@ -49,10 +59,13 @@ export function OrderProvider({ children }) {
   }, [customer]);
 
   useEffect(() => {
+<<<<<<< HEAD
     localStorage.setItem(BASKET_KEY, JSON.stringify(basketItems));
   }, [basketItems]);
 
   useEffect(() => {
+=======
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
     localStorage.setItem(ORDER_KEY, pendingOrderMessage);
   }, [pendingOrderMessage]);
 
@@ -62,6 +75,7 @@ export function OrderProvider({ children }) {
 
   const resetCustomer = () => setCustomer(defaultAddress);
 
+<<<<<<< HEAD
   const addToBasket = (spice, pack, qty = 1) => {
     const quantity = Math.max(1, Number(qty) || 1);
     const key = buildItemKey(spice.id || spice.slug, pack.weight);
@@ -143,6 +157,8 @@ export function OrderProvider({ children }) {
     return lines.join("\n");
   }, [basketItems, basketCount, basketTotal]);
 
+=======
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
   const customerText = useMemo(() => {
     const lines = [];
 
@@ -165,6 +181,7 @@ export function OrderProvider({ children }) {
     );
   }, [customer]);
 
+<<<<<<< HEAD
   const buildBasketMessage = () => {
     if (basketItems.length) {
       return `Namaste! Mujhe MK Raj Spices ka order karna hai.\n\nOrder Details:\n${basketText}\n\nPlease confirm karein.`;
@@ -173,6 +190,9 @@ export function OrderProvider({ children }) {
   };
 
   const createWhatsAppLink = (message = buildBasketMessage()) => {
+=======
+  const createWhatsAppLink = (message = pendingOrderMessage) => {
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
     const fullMessage = `${message}\n\nCustomer Details:\n${customerText || "Address not filled"}`;
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(fullMessage)}`;
   };
@@ -187,6 +207,7 @@ export function OrderProvider({ children }) {
     setPendingOrderMessage,
     createWhatsAppLink,
     whatsappNumber: WHATSAPP_NUMBER,
+<<<<<<< HEAD
     basketItems,
     basketCount,
     basketTotal,
@@ -198,6 +219,8 @@ export function OrderProvider({ children }) {
     removeFromBasket,
     clearBasket,
     buildBasketMessage,
+=======
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
   };
 
   return <OrderContext.Provider value={value}>{children}</OrderContext.Provider>;

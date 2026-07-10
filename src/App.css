@@ -182,6 +182,7 @@
     border-right-color: var(--border);
   }
 }
+<<<<<<< HEAD
 
 .site-basket-btn {
   display: inline-flex;
@@ -321,3 +322,5 @@
     background-size: cover !important;
   }
 }
+=======
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1

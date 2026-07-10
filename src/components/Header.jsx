@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { MKRAJ_LOGO_SRC } from "../data";
+<<<<<<< HEAD
 import { useOrder } from "../context/OrderContext";
 import { ShoppingBasket } from "lucide-react";
 import "./Header.css";
@@ -10,6 +11,12 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { basketCount, basketTotal } = useOrder();
 
+=======
+import OrderLink from "./OrderLink";
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
   const linkStyle = ({ isActive }) => ({
     color: isActive ? "#8B0000" : "#555",
     fontWeight: 700,
@@ -52,6 +59,7 @@ export default function Header() {
             <NavLink to="/find-us" style={linkStyle} onClick={closeMenu}>Find Us</NavLink>
           </nav>
 
+<<<<<<< HEAD
           {/* <NavLink
             to="/address"
             onClick={closeMenu}
@@ -93,6 +101,15 @@ export default function Header() {
     {basketCount}
   </span>
 </NavLink>
+=======
+          <OrderLink
+            message={"Namaste! Mujhe MK Raj Spices ka order karna hai.\nPlease confirm karein."}
+            className="site-order-btn"
+            onClick={closeMenu}
+          >
+            💬 Order Now
+          </OrderLink>
+>>>>>>> 4387c785487e43dabfbea5d373e224336b7ccce1
         </div>
       </div>
     </header>
