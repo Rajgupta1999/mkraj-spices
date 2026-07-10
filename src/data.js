@@ -3,6 +3,10 @@ import instagramQr from "./assets/instagram-qr.png";
 import fssaiQr from "./assets/fssai-qr.png";
 import mkrajlogo from "./assets/MkRaj_logo.png";
 import backgroundImage from "./assets/herobg.png";
+import  mirchi  from "./assets/mirch.png";
+import  haldi  from "./assets/haldi.png";
+import  dhaniya  from "./assets/dhaniya.png";
+
 
 // export const SPICES = [
 //   {
@@ -134,3 +138,6 @@ export const INSTAGRAM_QR_SRC = instagramQr;
 export const INSTAGRAM_URL = "https://instagram.com/mkrajvlog";
 export const MKRAJ_LOGO_SRC = mkrajlogo;
 export const BACKGROUND_IMAGE_SRC = backgroundImage;
+export const MIRCHI_IMAGE_SRC = mirchi;
+export const HALDI_IMAGE_SRC = haldi;
+export const DHANIYA_IMAGE_SRC = dhaniya;

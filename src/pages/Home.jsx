@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { GOOGLE_REVIEW_URL, FSSAI_NO,BACKGROUND_IMAGE_SRC } from "../data";
+import { GOOGLE_REVIEW_URL, FSSAI_NO,BACKGROUND_IMAGE_SRC,HALDI_IMAGE_SRC,MIRCHI_IMAGE_SRC,DHANIYA_IMAGE_SRC } from "../data";
 import { Helmet } from "react-helmet-async";
 
 export default function Home() {
@@ -300,7 +300,7 @@ export default function Home() {
   }}
   >
     <img
-      src="/public/dhaniya.jpg"
+      src={DHANIYA_IMAGE_SRC}
       alt="MK Raj Premium Spices"
       style={{
         width: "300px",
@@ -338,7 +338,7 @@ export default function Home() {
   }}
   >
     <img
-      src="/public/haldi.jpg"
+      src={HALDI_IMAGE_SRC}
       alt="MK Raj Premium Spices"
       style={{
          width: "300px",
@@ -376,7 +376,7 @@ export default function Home() {
   }}
   >
     <img
-      src="/public/mirchi.jpg"
+      src={MIRCHI_IMAGE_SRC}
       alt="MK Raj Premium Spices"
       style={{
         width: "300px",
