@@ -1,10 +1,104 @@
+// import { useState } from "react";
+// import { NavLink } from "react-router-dom";
+// import { MKRAJ_LOGO_SRC } from "../data";
+// import { useOrder } from "../context/OrderContext";
+// import { ShoppingBasket } from "lucide-react";
+// import "./Header.css";
+
+// export default function Header() {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const { basketCount, basketTotal } = useOrder();
+
+//   const linkStyle = ({ isActive }) => ({
+//     color: isActive ? "#8B0000" : "#555",
+//     fontWeight: 700,
+//     fontSize: 14,
+//     textDecoration: "none",
+//     borderBottom: isActive ? "2px solid #8B0000" : "2px solid transparent",
+//     paddingBottom: 4,
+//   });
+
+//   const closeMenu = () => setIsOpen(false);
+
+//   return (
+//     <header className="site-header">
+//       <div className="site-header__inner">
+//         <NavLink to="/" onClick={closeMenu} className="site-brand">
+//           <img
+//             src={MKRAJ_LOGO_SRC}
+//             alt="MK Raj Logo"
+//             className="site-brand__logo"
+//           />
+//           <div>
+//             <div className="site-brand__title">MK Raj</div>
+//             <div className="site-brand__tagline">PREMIUM SPICES</div>
+//           </div>
+//         </NavLink>
+
+//         <button
+//           type="button"
+//           className="site-menu-btn"
+//           aria-label="Toggle navigation menu"
+//           aria-expanded={isOpen}
+//           onClick={() => setIsOpen((value) => !value)}
+//         >
+//           <span />
+//           <span />
+//           <span />
+//         </button>
+//         <div>
+//           <NavLink
+//             to="/address"
+//             onClick={closeMenu}
+//             aria-label={`Open basket. ${basketCount} item selected. Total ₹${basketTotal}`}
+//             className="site-basket-btn"
+//           >
+//             <div className="site-basket-btn__glow"></div>
+
+//             <ShoppingBasket
+//               size={24}
+//               strokeWidth={2.3}
+//               className="site-basket-btn__icon"
+//             />
+
+//             <div className="site-basket-btn__content">
+//               {/* <span className="site-basket-btn__title"> My Basket</span> */}
+
+//               <span className="site-basket-btn__price">₹{basketTotal}</span>
+//             </div>
+
+//             <span className="site-basket-btn__count">{basketCount}</span>
+//           </NavLink>
+//         </div>
+
+//         <div className={`site-header__menu ${isOpen ? "is-open" : ""}`}>
+//           <nav className="site-nav">
+//             <NavLink to="/" end style={linkStyle} onClick={closeMenu}>
+//               Home
+//             </NavLink>
+//             <NavLink to="/products" style={linkStyle} onClick={closeMenu}>
+//               Products
+//             </NavLink>
+//             <NavLink to="/about" style={linkStyle} onClick={closeMenu}>
+//               About
+//             </NavLink>
+//             <NavLink to="/find-us" style={linkStyle} onClick={closeMenu}>
+//               Find Us
+//             </NavLink>
+//           </nav>
+//         </div>
+//       </div>
+//     </header>
+//   );
+// }
+
+
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { MKRAJ_LOGO_SRC } from "../data";
 import { useOrder } from "../context/OrderContext";
 import { ShoppingBasket } from "lucide-react";
 import "./Header.css";
-
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +109,9 @@ export default function Header() {
     fontWeight: 700,
     fontSize: 14,
     textDecoration: "none",
-    borderBottom: isActive ? "2px solid #8B0000" : "2px solid transparent",
+    borderBottom: isActive
+      ? "2px solid #8B0000"
+      : "2px solid transparent",
     paddingBottom: 4,
   });
 
@@ -24,75 +120,77 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="site-header__inner">
+        {/* Brand */}
         <NavLink to="/" onClick={closeMenu} className="site-brand">
-          <img src={MKRAJ_LOGO_SRC} alt="MK Raj Logo" className="site-brand__logo" />
-          <div>
+          <img
+            src={MKRAJ_LOGO_SRC}
+            alt="MK Raj Logo"
+            className="site-brand__logo"
+          />
+
+          <div className="site-brand__content">
             <div className="site-brand__title">MK Raj</div>
             <div className="site-brand__tagline">PREMIUM SPICES</div>
           </div>
         </NavLink>
 
-        <button
-          type="button"
-          className="site-menu-btn"
-          aria-label="Toggle navigation menu"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((value) => !value)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-
+        {/* Desktop Navigation */}
         <div className={`site-header__menu ${isOpen ? "is-open" : ""}`}>
           <nav className="site-nav">
-            <NavLink to="/" end style={linkStyle} onClick={closeMenu}>Home</NavLink>
-            <NavLink to="/products" style={linkStyle} onClick={closeMenu}>Products</NavLink>
-            <NavLink to="/about" style={linkStyle} onClick={closeMenu}>About</NavLink>
-            <NavLink to="/find-us" style={linkStyle} onClick={closeMenu}>Find Us</NavLink>
-          </nav>
+            <NavLink to="/" end style={linkStyle} onClick={closeMenu}>
+              Home
+            </NavLink>
 
-          {/* <NavLink
+            <NavLink to="/products" style={linkStyle} onClick={closeMenu}>
+              Products
+            </NavLink>
+
+            <NavLink to="/about" style={linkStyle} onClick={closeMenu}>
+              About
+            </NavLink>
+
+            <NavLink to="/find-us" style={linkStyle} onClick={closeMenu}>
+              Find Us
+            </NavLink>
+          </nav>
+        </div>
+
+        {/* Right Side: Basket first, menu button last */}
+        <div className="site-header__actions">
+          <NavLink
             to="/address"
             onClick={closeMenu}
             aria-label={`Open basket. ${basketCount} item selected. Total ₹${basketTotal}`}
             className="site-basket-btn"
           >
-            <span className="site-basket-btn__icon">🧺</span>
-            <span className="site-basket-btn__text">
-              Basket
-              <small>₹{basketTotal}</small>
+            <span className="site-basket-btn__glow"></span>
+
+            <ShoppingBasket
+              size={24}
+              strokeWidth={2.3}
+              className="site-basket-btn__icon"
+            />
+
+            <span className="site-basket-btn__price">
+              ₹{basketTotal}
             </span>
-            <span className="site-basket-btn__count">{basketCount}</span>
-          </NavLink> */}
-          <NavLink
-  to="/address"
-  onClick={closeMenu}
-  aria-label={`Open basket. ${basketCount} item selected. Total ₹${basketTotal}`}
-  className="site-basket-btn"
->
-  <div className="site-basket-btn__glow"></div>
 
-  <ShoppingBasket
-    size={24}
-    strokeWidth={2.3}
-    className="site-basket-btn__icon"
-  />
+            <span className="site-basket-btn__count">
+              {basketCount}
+            </span>
+          </NavLink>
 
-  <div className="site-basket-btn__content">
-    {/* <span className="site-basket-btn__title">
-      My Basket
-    </span> */}
-
-    <span className="site-basket-btn__price">
-      ₹{basketTotal}
-    </span>
-  </div>
-
-  <span className="site-basket-btn__count">
-    {basketCount}
-  </span>
-</NavLink>
+          <button
+            type="button"
+            className={`site-menu-btn ${isOpen ? "is-active" : ""}`}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen((value) => !value)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
         </div>
       </div>
     </header>

@@ -34,7 +34,7 @@ export default function Products() {
         name: "Which MK Raj Spices products are available?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "MK Raj Spices offers Haldi Powder, Mirchi Powder and Dhaniya Powder.",
+          text: "MK Raj Spices offers Haldi Powder, Mirchi Powder, Dhaniya Powder and Garam Masala.",
         },
       },
       {
@@ -59,11 +59,11 @@ export default function Products() {
   return (
     <>
       <Helmet>
-        <title>MK Raj Products | Haldi, Mirchi & Dhaniya Powder</title>
+        <title>MK Raj Products | Haldi, Mirchi, Dhaniya & Garam Masala</title>
 
         <meta
           name="description"
-          content="Buy MK Raj Haldi Powder, Mirchi Powder and Dhaniya Powder. Pure Indian spices, hygienically packed, FSSAI certified and available in multiple pack sizes."
+          content="Buy MK Raj Haldi Powder, Mirchi Powder, Dhaniya Powder and Garam Masala. Pure Indian spices, hygienically packed, FSSAI certified and available in multiple pack sizes."
         />
 
         <meta
@@ -76,7 +76,7 @@ export default function Products() {
         <meta property="og:title" content="MK Raj Spices Products" />
         <meta
           property="og:description"
-          content="Explore MK Raj Haldi, Mirchi and Dhaniya Powder."
+          content="Explore MK Raj Haldi, Mirchi, Dhaniya Powder and Garam Masala."
         />
         <meta
           property="og:image"
@@ -112,7 +112,7 @@ export default function Products() {
             </h1>
 
             <p style={{ color: "#888", fontSize: 15 }}>
-              Pure Haldi Powder, Mirchi Powder and Dhaniya Powder · FSSAI Lic.
+              Pure Haldi Powder, Mirchi Powder, Dhaniya Powder and Garam Masala · FSSAI Lic.
               No. {FSSAI_NO}
             </p>
           </div>
@@ -162,6 +162,11 @@ export default function Products() {
                 ingredients: "Coriander seeds",
                 uses: "For aroma and flavour in vegetables, curries and Indian dishes.",
               },
+              {
+                title: "Garam Masala",
+                ingredients: "Tej Patta,Saunf,Shah Jeera,Jeera,Kali Mirch,Dalchini,Laung,Hari Elaichi,Saunth,Shah Jeera,Badi Elaichi,Jaiphal,Javitri,Kabab Chini,Safed Mirch,Pathar Phool,Choti Pipli",
+                uses: "For rich aroma and flavour in curry, paneer, pulao, biryani and traditional dishes.",
+              },
             ].map((p) => (
               <div
                 key={p.title}
@@ -172,7 +177,7 @@ export default function Products() {
                   boxShadow: "0 2px 14px rgba(0,0,0,0.06)",
                 }}
               >
-                <h3 style={{ marginTop: 0, color: "#5C1A00" }}>
+                {/* <h3 style={{ marginTop: 0, color: "#5C1A00" }}>
                   MK Raj {p.title}
                 </h3>
                 <p>
@@ -190,7 +195,7 @@ export default function Products() {
                 </p>
                 <p>
                   <b>FSSAI:</b> {FSSAI_NO}
-                </p>
+                </p> */}
               </div>
             ))}
           </div>
@@ -206,7 +211,7 @@ export default function Products() {
           {[
             [
               "Which MK Raj Spices products are available?",
-              "MK Raj Spices offers Haldi Powder, Mirchi Powder and Dhaniya Powder.",
+              "MK Raj Spices offers Haldi Powder, Mirchi Powder, Dhaniya Powder and Garam Masala.",
             ],
             [
               "What pack sizes are available?",

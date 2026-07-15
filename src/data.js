@@ -6,6 +6,7 @@ import backgroundImage from "./assets/herobg.png";
 import  mirchi  from "./assets/mirch.png";
 import  haldi  from "./assets/haldi.png";
 import  dhaniya  from "./assets/dhaniya.png";
+import garam_masala from "./assets/garam.png";
 
 
 // export const SPICES = [
@@ -103,7 +104,9 @@ export const SPICES = [
       { weight: "200g", price: 90 },
       { weight: "500g", price: 222 },
       { weight: "1kg", price: 440 },
+
     ],
+    
   },
   {
     id: "dhaniya",
@@ -126,6 +129,27 @@ export const SPICES = [
       { weight: "1kg", price: 440 },
     ],
   },
+  {
+    id: "garam-masala",
+    slug: "garam-masala",
+    image: "/garam.jpg",
+    name: "Garam Masala",
+    hindi: "गरम मसाला",
+    emoji: "🌰",
+    color: "#6B2D1A",
+    accent: "#B56A2D",
+    desc: "Aromatic MK Raj Garam Masala blend prepared to add rich flavour and traditional aroma to Indian dishes.",
+    ingredient: "Selected whole spices",
+    uses: "Sabzi, curry, dal, paneer, pulao, biryani and traditional Indian recipes.",
+    packs: [
+      { weight: "12g", price: 10 },
+      { weight: "23g", price: 20 },
+      { weight: "100g", price: 110 },
+      { weight: "200g", price: 210 },
+      { weight: "500g", price: 515 },
+      { weight: "1kg", price: 1000 },
+    ],
+  },
 ];
 
 
@@ -141,3 +165,4 @@ export const BACKGROUND_IMAGE_SRC = backgroundImage;
 export const MIRCHI_IMAGE_SRC = mirchi;
 export const HALDI_IMAGE_SRC = haldi;
 export const DHANIYA_IMAGE_SRC = dhaniya;
+export const GARAM_MASALA_IMAGE_SRC = garam_masala;

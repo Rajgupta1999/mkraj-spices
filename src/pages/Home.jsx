@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { GOOGLE_REVIEW_URL, FSSAI_NO,BACKGROUND_IMAGE_SRC,HALDI_IMAGE_SRC,MIRCHI_IMAGE_SRC,DHANIYA_IMAGE_SRC } from "../data";
+import { GOOGLE_REVIEW_URL, FSSAI_NO,BACKGROUND_IMAGE_SRC,HALDI_IMAGE_SRC,MIRCHI_IMAGE_SRC,DHANIYA_IMAGE_SRC, GARAM_MASALA_IMAGE_SRC } from "../data";
 import { Helmet } from "react-helmet-async";
 
 export default function Home() {
@@ -20,11 +20,11 @@ export default function Home() {
     <>
     
      <Helmet>
-  <title>MK Raj Spices | Pure Haldi, Mirchi & Dhaniya Powder</title>
+  <title>MK Raj Spices | Pure Haldi, Mirchi, Dhaniya & Garam Masala</title>
     
   <meta
     name="description"
-    content="MK Raj Spices offers pure Haldi Powder, Mirchi Powder and Dhaniya Powder. Hygienically packed, natural Indian spices from Hamirpur, Uttar Pradesh."
+    content="MK Raj Spices offers pure Haldi Powder, Mirchi Powder, Dhaniya Powder and Garam Masala. Hygienically packed, natural Indian spices from Hamirpur, Uttar Pradesh."
   />
 
   <meta
@@ -37,7 +37,7 @@ export default function Home() {
   <meta property="og:title" content="MK Raj Spices | Pure Indian Spices" />
   <meta
     property="og:description"
-    content="Pure Haldi, Mirchi and Dhaniya Powder by MK Raj Spices. Hygienically packed and FSSAI certified."
+    content="Pure Haldi, Mirchi, Dhaniya Powder and Garam Masala by MK Raj Spices. Hygienically packed and FSSAI certified."
   />
   <meta
     property="og:image"
@@ -54,7 +54,7 @@ export default function Home() {
       url: "https://mkrajspices.netlify.app/",
       logo: "https://mkrajspices.netlify.app/MkRaj_logo.png",
       description:
-        "MK Raj Spices offers pure Haldi Powder, Mirchi Powder and Dhaniya Powder from Hamirpur, Uttar Pradesh.",
+        "MK Raj Spices offers pure Haldi Powder, Mirchi Powder, Dhaniya Powder and Garam Masala from Hamirpur, Uttar Pradesh.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Hamirpur",
@@ -74,7 +74,7 @@ export default function Home() {
       name: "MK Raj Spices",
       url: "https://mkrajspices.netlify.app/",
       description:
-        "Official website of MK Raj Spices for pure Haldi, Mirchi and Dhaniya Powder.",
+        "Official website of MK Raj Spices for pure Haldi, Mirchi, Dhaniya Powder and Garam Masala.",
     })}
   </script>
 
@@ -88,7 +88,7 @@ export default function Home() {
           name: "What products does MK Raj Spices sell?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "MK Raj Spices sells Haldi Powder, Mirchi Powder and Dhaniya Powder.",
+            text: "MK Raj Spices sells Haldi Powder, Mirchi Powder, Dhaniya Powder and Garam Masala.",
           },
         },
         {
@@ -254,6 +254,13 @@ export default function Home() {
       >
         ⭐ Rate Us
       </a>
+
+      <a href={`https://wa.me/916398033582?text=${encodeURIComponent(
+            "Namaste! Mujhe MK Raj Spices ke liye bulk order/place karna hai.\nKripya product catalog, wholesale price list aur minimum order quantity (MOQ) share karein.",)}`}
+          target="_blank" rel="noopener noreferrer" style={{ color: "#e9efeb", textDecoration: "none" ,background: "#107b20", padding: "16px 36px", borderRadius: 16, fontWeight: 900, fontSize: 21, border: "1px solid #25D366", display: "inline-block" }}
+        >
+          📦 Bulk Order on WhatsApp
+        </a>
     </div>
   </div>
 </section>
@@ -272,125 +279,77 @@ export default function Home() {
 <section
   style={{
     padding: "90px 20px",
-    background:
-      "linear-gradient(135deg,#fff8f0,#fff2e5,#fffaf8)",
-    display: "flex",
-    justifyContent: "center",
+    background: "linear-gradient(135deg,#fff8f0,#fff2e5,#fffaf8)",
   }}
 >
   <div
     style={{
-      background: "#7e81c7",
-      borderRadius: "30px",
-      padding: "10px",
-      boxShadow: "0 25px 60px rgba(0,0,0,.12)",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      cursor: "pointer",
-      transition: "all 0.4s ease",
+      maxWidth: 1240,
+      margin: "0 auto",
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+      gap: 18,
     }}
-    onMouseEnter={(e) => {
-    e.currentTarget.style.transform = "translateY(-10px) scale(1.03)";
-    e.currentTarget.style.boxShadow = "0 40px 80px rgba(0,0,0,.25)";
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = "translateY(0) scale(1)";
-    e.currentTarget.style.boxShadow = "0 25px 60px rgba(0,0,0,.12)";
-  }}
   >
-    <img
-      src={DHANIYA_IMAGE_SRC}
-      alt="MK Raj Premium Spices"
-      style={{
-        width: "300px",
-        maxWidth: "70%",
-        display: "block",
-        transition: "transform .4s ease",
-      }}
-      onMouseEnter={(e) => {
-      e.currentTarget.style.transform = "scale(1.08) rotate(-2deg)";
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = "scale(1) rotate(0deg)";
-    }}
-    />
-  </div>
-  <div
-    style={{
-      background: "#7e81c7",
-      borderRadius: "30px",
-      padding: "10px",
-      boxShadow: "0 25px 60px rgba(0,0,0,.12)",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      cursor: "pointer",
-      transition: "all 0.4s ease",
-    }}
-     onMouseEnter={(e) => {
-    e.currentTarget.style.transform = "translateY(-10px) scale(1.03)";
-    e.currentTarget.style.boxShadow = "0 40px 80px rgba(0,0,0,.25)";
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = "translateY(0) scale(1)";
-    e.currentTarget.style.boxShadow = "0 25px 60px rgba(0,0,0,.12)";
-  }}
-  >
-    <img
-      src={HALDI_IMAGE_SRC}
-      alt="MK Raj Premium Spices"
-      style={{
-         width: "300px",
-        maxWidth: "70%",
-        display: "block",
-        transition: "transform .4s ease",
-       }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.transform = "scale(1.08) rotate(-2deg)";
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = "scale(1) rotate(0deg)";
-    }}
-    />
-  </div>
-   <div
-    style={{
-      background: "#7e81c7",
-      borderRadius: "30px",
-      padding: "10px",
-      boxShadow: "0 25px 60px rgba(0,0,0,.12)",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      cursor: "pointer",
-      transition: "all 0.4s ease",
-    }}
-    onMouseEnter={(e) => {
-    e.currentTarget.style.transform = "translateY(-10px) scale(1.03)";
-    e.currentTarget.style.boxShadow = "0 40px 80px rgba(0,0,0,.25)";
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = "translateY(0) scale(1)";
-    e.currentTarget.style.boxShadow = "0 25px 60px rgba(0,0,0,.12)";
-  }}
-  >
-    <img
-      src={MIRCHI_IMAGE_SRC}
-      alt="MK Raj Premium Spices"
-      style={{
-        width: "300px",
-        maxWidth: "70%",
-        display: "block",
-        transition: "transform .4s ease",
-      }}
-      onMouseEnter={(e) => {
-      e.currentTarget.style.transform = "scale(1.08) rotate(-2deg)";
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = "scale(1) rotate(0deg)";
-    }}
-    />
+    {[
+      { title: "Garam Masala", image: GARAM_MASALA_IMAGE_SRC, to: "/garam-masala" },
+      { title: "Dhaniya Powder", image: DHANIYA_IMAGE_SRC, to: "/dhaniya-powder" },
+      { title: "Haldi Powder", image: HALDI_IMAGE_SRC, to: "/haldi-powder" },
+      { title: "Mirchi Powder", image: MIRCHI_IMAGE_SRC, to: "/mirchi-powder" },
+    ].map((product) => (
+      <Link
+        key={product.to}
+        to={product.to}
+        aria-label={`Open MK Raj ${product.title} details`}
+        style={{ textDecoration: "none", display: "block" }}
+      >
+        <div
+          style={{
+            background: "#7e81c7",
+            borderRadius: 30,
+            padding: 10,
+            minHeight: 315,
+            boxShadow: "0 25px 60px rgba(0,0,0,.12)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            cursor: "pointer",
+            transition: "all .4s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-10px) scale(1.03)";
+            e.currentTarget.style.boxShadow = "0 40px 80px rgba(0,0,0,.25)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0) scale(1)";
+            e.currentTarget.style.boxShadow = "0 25px 60px rgba(0,0,0,.12)";
+          }}
+        >
+          <img
+            src={product.image}
+            alt={`MK Raj ${product.title}`}
+            style={{
+              width: 300,
+              maxWidth: "82%",
+              display: "block",
+              transition: "transform .4s ease",
+            }}
+          />
+          <span
+            style={{
+              marginTop: 8,
+              color: "#fff",
+              fontWeight: 900,
+              fontSize: 15,
+              textAlign: "center",
+            }}
+          >
+            View {product.title} →
+          </span>
+        </div>
+      </Link>
+    ))}
   </div>
 </section>
 
@@ -458,7 +417,7 @@ export default function Home() {
     {[
       [
         "What products does MK Raj Spices sell?",
-        "MK Raj Spices sells Haldi Powder, Mirchi Powder and Dhaniya Powder."
+        "MK Raj Spices sells Haldi Powder, Mirchi Powder, Dhaniya Powder and Garam Masala."
       ],
       [
         "Is MK Raj Haldi Powder pure?",
@@ -499,7 +458,7 @@ export default function Home() {
     image: "https://mkrajspices.netlify.app/MkRaj_logo.png",
     url: "https://mkrajspices.netlify.app/",
     description:
-      "MK Raj Spices offers pure Haldi Powder, Mirchi Powder and Dhaniya Powder from Hamirpur, Uttar Pradesh.",
+      "MK Raj Spices offers pure Haldi Powder, Mirchi Powder, Dhaniya Powder and Garam Masala from Hamirpur, Uttar Pradesh.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Hamirpur",

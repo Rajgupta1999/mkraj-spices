@@ -111,3 +111,129 @@
     transform: rotate(-8deg) scale(1.05);
   }
 }
+
+
+/* Header main row */
+.site-header__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 18px;
+}
+
+/* Basket + Menu ka wrapper */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Desktop navigation */
+.site-header__menu {
+  margin-left: auto;
+}
+
+/* Desktop par menu button hidden */
+.site-menu-btn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .site-header__inner {
+    gap: 10px;
+  }
+
+  .site-header__actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Basket pehle */
+  .site-basket-btn {
+    order: 1;
+  }
+
+  /* Menu bilkul right corner */
+  .site-menu-btn {
+    order: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    width: 52px;
+    height: 52px;
+
+    padding: 0;
+
+    border: 1px solid rgba(139, 0, 0, 0.16);
+    border-radius: 14px;
+
+    background: #fffaf7;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .site-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+
+    border-radius: 20px;
+    background: #8b0000;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Mobile dropdown */
+  .site-header__menu {
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    right: 10px;
+    z-index: 999;
+
+    margin-left: 0;
+    padding: 0 16px;
+
+    max-height: 0;
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+
+    background: #ffffff;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+
+    transition:
+      max-height 0.35s ease,
+      opacity 0.25s ease,
+      padding 0.35s ease;
+  }
+
+  .site-header__menu.is-open {
+    max-height: 320px;
+    padding: 16px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .site-nav a {
+    width: 100%;
+    padding: 12px 8px;
+  }
+}
